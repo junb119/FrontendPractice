@@ -1,6 +1,38 @@
-body {
-  color : red;
-  font-size: 100px;
-  font-family: 'Nanum Gothic', sans-serif;
+/* COMMON */
 
+body {
+  /* 기본 글자 */
+  color : #333;
+  font-size: 16px;   /* 폰트 사이즈 */
+  font-weight: 400;  /* 글자 두께 */
+  line-height: 1.4;   /* 행간 */
+  font-family: 'Nanum Gothic', sans-serif;
+}
+img {
+  display: block; /* inline 요소인 img태그 때문에 생기는 여백을 없애기 위해 block 처리*/
+}
+
+
+/* Header */
+
+header {
+  background-color: royalblue;
+}
+
+header .inner {
+  width: 1100px;
+  height: 120px;
+  margin : auto;   /* inner를 가운데 정렬 */
+  background-color: orange;
+  position: relative;
+}
+
+header .logo{
+  height: 75px;
+  position: absolute;
+  left : 0;
+  top:0;
+  bottom:0;
+  margin:auto;  /* 로고 수직가운데정렬 */
+  
 }
