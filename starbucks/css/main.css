@@ -12,7 +12,9 @@ img {
   display: block; /* inline 요소인 img태그 때문에 생기는 여백을 없애기 위해 block 처리*/
 }
 
-
+a {
+  text-decoration: none;
+}
 /* Header */
 
 header {
@@ -34,5 +36,57 @@ header .logo{
   top:0;
   bottom:0;
   margin:auto;  /* 로고 수직가운데정렬 */
+  display: none;
   
+}
+
+header .sub-menu {
+  
+}
+
+header .sub-menu ul.menu {
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+header .sub-menu ul.menu li {
+  position: relative;
+}
+header .sub-menu ul.menu li::before{
+  content: "";
+  width:1px;
+  height:12px;
+  top:0;
+  bottom:0;
+  margin : auto;
+  position: absolute; /* before, after는 인라인 요소이기에 block요소로 변경 */
+  background-color: #e5e5e5;
+}
+
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
+}
+
+header .sub-menu ul.menu li a{
+  display: block;
+  /* background-color: #fff; */
+  padding : 11px 16px; /* 클릭이 용이하도록 내부여백 크기조정 */
+  color: #656565;
+  
+}
+header .sub-menu ul.menu li a:hover{
+  color: #000;
+
+}
+
+header .sub-menu .search {
+
+}
+
+header .sub-menu .search input{
+
+}
+
+header .sub-menu .search .material-icons{
+
 }
