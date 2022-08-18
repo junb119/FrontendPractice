@@ -7,6 +7,7 @@ body {
   font-weight: 400;  /* 글자 두께 */
   line-height: 1.4;   /* 행간 */
   font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
 }
 img {
   display: block; /* inline 요소인 img태그 때문에 생기는 여백을 없애기 위해 block 처리*/
@@ -28,6 +29,8 @@ a {
 header {
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  position: fixed;
+  width: 100%
 }
 
 header > .inner {
@@ -221,3 +224,21 @@ header .main-menu .item .item__contents .contents__texture p {
   margin: 4px 0 14px;
 
 }
+
+
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+
+}
+
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom :12px;
+  box-shadow : 4px 4px 10px rgba(0,0,0,.5);
+  cursor : pointer
+
+}
+
