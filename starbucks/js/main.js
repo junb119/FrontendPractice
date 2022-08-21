@@ -1,3 +1,5 @@
+// header - Search 
+
 const searchEl = document.querySelector('.search')
 const searchInputEl= searchEl.querySelector('input')
 
@@ -19,8 +21,8 @@ searchInputEl.addEventListener('blur', function () {
 
 const badgeEl = document.querySelector('header .badges')
 
-// window 객체 : 화면
-// lodash의 throttle 메소드 : 스크롤할시 0.3초마다 function 실행
+  // window 객체 : 화면
+  // lodash의 throttle 메소드 : 스크롤할시 0.3초마다 function 실행
 window.addEventListener('scroll', _.throttle(function (){
   console.log(window.scrollY)
   if (window.scrollY > 500) {  // window.scroll의 Y값이 500이 넘으면 뱃지 숨기기
@@ -38,6 +40,8 @@ window.addEventListener('scroll', _.throttle(function (){
   }
 }, 300));
 
+
+// 메인 첫화면 애니메이션
 const fadeEl = document.querySelectorAll('.visual .fade-in')
 fadeEl.forEach(function (fadeEl, index) {
   gsap.to(fadeEl, 1, {
@@ -45,4 +49,14 @@ fadeEl.forEach(function (fadeEl, index) {
     opacity: 1,
   })
 
+});
+
+
+// 공지사항
+// Swiper(선택자, 옵션)
+
+new Swiper('.notice-line .swiper', {             
+  direction : 'vertical',
+  autoplay: true,
+  loop: true
 });
