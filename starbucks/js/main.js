@@ -1,7 +1,7 @@
 // header - Search 
 
 const searchEl = document.querySelector('.search')
-const searchInputEl= searchEl.querySelector('input')
+const searchInputEl = searchEl.querySelector('input')
 
 searchEl.addEventListener('click', function () {
   searchInputEl.focus();
@@ -21,20 +21,20 @@ searchInputEl.addEventListener('blur', function () {
 
 const badgeEl = document.querySelector('header .badges')
 
-  // window 객체 : 화면
-  // lodash의 throttle 메소드 : 스크롤할시 0.3초마다 function 실행
-window.addEventListener('scroll', _.throttle(function (){
+// window 객체 : 화면
+// lodash의 throttle 메소드 : 스크롤할시 0.3초마다 function 실행
+window.addEventListener('scroll', _.throttle(function () {
   console.log(window.scrollY)
-  if (window.scrollY > 500) {  // window.scroll의 Y값이 500이 넘으면 뱃지 숨기기
+  if (window.scrollY > 500) { // window.scroll의 Y값이 500이 넘으면 뱃지 숨기기
     // gsap.to(요소, 지속시간,옵션) : 애니메이션처리
-    gsap.to(badgeEl, .6 , {
+    gsap.to(badgeEl, .6, {
       opacity: 0,
-      display : 'none'
-      })
+      display: 'none'
+    })
   } else {
-    gsap.to(badgeEl, .6 , {
-      opacity: 1 , 
-      display : 'block'
+    gsap.to(badgeEl, .6, {
+      opacity: 1,
+      display: 'block'
     });
     // 뱃지 보이기
   }
@@ -55,25 +55,25 @@ fadeEl.forEach(function (fadeEl, index) {
 // 공지사항
 // Swiper(선택자, 옵션)
 
-new Swiper('.notice-line .swiper', {             
-  direction : 'vertical',
+new Swiper('.notice-line .swiper', {
+  direction: 'vertical',
   autoplay: true,
   loop: true
 });
 
-new Swiper('.promotion .swiper' , { 
+new Swiper('.promotion .swiper', {
   slidesPerView: 3, // 한번에 보여줄 슬라이드 개수(default : 1 )
-  spaceBetween : 10, // 슬라이드 사이 여백
+  spaceBetween: 10, // 슬라이드 사이 여백
   centeredSlides: true, // 1번 슬라이드가 가운데 보이기
-  loop : true, 
-  autoplay : {
-    delay : 5000 // 5초
+  loop: true,
+  autoplay: {
+    delay: 5000 // 5초
   },
 
   pagination: {
     el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
     clickable: true // 사용자의 페이지 번호 요소 제어 가능 여부
-  },                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+  },
   navigation: {
     prevEl: '.promotion .swiper-prev',
     nextEl: '.promotion .swiper-next'
@@ -82,9 +82,9 @@ new Swiper('.promotion .swiper' , {
 
 // 프로모션 토글
 const promotionEl = document.querySelector('.promotion')
-const promotionToggleBtn= document.querySelector('.toggle-promotion')
+const promotionToggleBtn = document.querySelector('.toggle-promotion')
 let isHidePromotion = false; // 프로모션 토글이 숨겨짐
-promotionToggleBtn.addEventListener('click' , function () {
+promotionToggleBtn.addEventListener('click', function () {
   isHidePromotion = !isHidePromotion
   if (isHidePromotion) { // 숨김 처리
     promotionEl.classList.add('hide')
@@ -92,3 +92,4 @@ promotionToggleBtn.addEventListener('click' , function () {
     promotionEl.classList.remove('hide')
   }
 })
+
