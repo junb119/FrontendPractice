@@ -7,7 +7,7 @@ body {
   font-weight: 400;  /* 글자 두께 */
   line-height: 1.4;   /* 행간 */
   font-family: 'Nanum Gothic', sans-serif;
-  height: 6000px;
+  height: 3000px;
 }
 img {
   display: block; /* inline 요소인 img태그 때문에 생기는 여백을 없애기 위해 block 처리*/
@@ -907,4 +907,54 @@ header .badges .badge {
 .find-store .text-group .description{
   margin-bottom: 20px;
 
+}
+
+/* AWARDS */
+
+.awards {
+  background-color: #272727;
+}
+.awards .inner{
+  padding:40px 0;
+
+}
+
+.awards .swiper {
+  width: 100%;
+  height: 40px;
+}
+
+.awards .swiper-prev,
+.awards .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline:none;
+  opacity:.3;
+  position: absolute;
+  top:0;
+  bottom:0; 
+  margin:auto;
+}
+
+.awards .swiper-prev{
+  left: -100px;
+  
+}
+
+.awards .swiper-next{
+  right: -100px
+}
+
+
+.awards .swiper-prev:hover,
+.awards .swiper-next:hover {
+  background-color: #fff;
+  color:#000;
 }

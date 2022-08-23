@@ -79,6 +79,18 @@ new Swiper('.promotion .swiper', {
     nextEl: '.promotion .swiper-next'
   }
 })
+// 
+new Swiper('.awards .swiper', {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30, // 슬라이드 사이 여백 
+  slidesPerView : 5,  // 한 화면에 보일 슬라이드 수
+  navigation : {
+    prevEl : '.awards .swiper-prev',
+    nextEl : '.awards .swiper-next'
+  }
+})
+
 
 // 프로모션 토글
 const promotionEl = document.querySelector('.promotion')
