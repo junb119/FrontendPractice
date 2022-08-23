@@ -18,8 +18,10 @@ searchInputEl.addEventListener('blur', function () {
 
 
 // gsap과 lodash를 이용해 스크롤에 따라 사라지는 뱃지 만들기
-
 const badgeEl = document.querySelector('header .badges')
+
+// ScrollToTop 버튼
+const ToTopEl = document.querySelector('#to-top')
 
 // window 객체 : 화면
 // lodash의 throttle 메소드 : 스크롤할시 0.3초마다 function 실행
@@ -30,15 +32,36 @@ window.addEventListener('scroll', _.throttle(function () {
     gsap.to(badgeEl, .6, {
       opacity: 0,
       display: 'none'
+
+    });
+    // ScrollToTop 버튼 보이기
+    gsap.to(ToTopEl, .2 , {
+      x: 0
     })
+
+    
   } else {
+    // 뱃지 보이기
     gsap.to(badgeEl, .6, {
       opacity: 1,
       display: 'block'
     });
-    // 뱃지 보이기
+  
+    // ScrollToTop 버튼 숨기기
+    gsap.to(ToTopEl, .2 , {
+      x: 100
+    })
   }
 }, 300));
+
+// ScrollToTop 버튼 클릭시 상단으로 이동
+// _.throttle(함수,시간)
+
+ToTopEl.addEventListener('click', function () {
+  gsap.to(window, .7, {
+    scrollTo : 0
+  })
+})
 
 
 // 메인 첫화면 애니메이션

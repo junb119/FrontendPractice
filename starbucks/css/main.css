@@ -7,7 +7,7 @@ body {
   font-weight: 400;  /* 글자 두께 */
   line-height: 1.4;   /* 행간 */
   font-family: 'Nanum Gothic', sans-serif;
-  
+
 }
 img {
   display: block; /* inline 요소인 img태그 때문에 생기는 여백을 없애기 위해 block 처리*/
@@ -1049,4 +1049,21 @@ footer .copyright {
 
 footer .logo {
   margin: 30px auto 0;
+}
+
+#to-top {
+  width: 42px;
+  height: 42px;
+  color:#fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor:pointer;
+  background-color: #333;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  right: 30px;
+  bottom:30px;
+  z-index:9
 }
