@@ -20,3 +20,4 @@ setInterval( getClock ,1000)
 
 console.log(typeof String(new Date().getSeconds()))
 
+
