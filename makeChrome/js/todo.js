@@ -15,8 +15,12 @@ function handleToDoSubmit(event) {
   event.preventDefault() // submit 새로고침 방지
   const newTodo = toDoInput.value 
   toDoInput.value = ''
-  toDos.push(newTodo)
-  paintTodo(newTodo)
+  const newTodoObj = { 
+    text:newTodo,
+    id:Date.now()
+  }
+  toDos.push(newTodoObj) 
+  paintTodo(newTodoObj)
   saveToDos()
 }
 
@@ -25,9 +29,9 @@ toDoForm.addEventListener('submit', handleToDoSubmit)
 // todo list 생성
 function paintTodo(newTodo) {
   const li = document.createElement('li') // li 태그 생성
-  
+  li.id= newTodo.id
   const span =document.createElement('span') // span 태그 생성
-  span.innerText = newTodo // span태그 텍스트 = toDoInput.value(newTodo) 
+  span.innerText = newTodo.text // span태그 텍스트 = toDoInput.value(newTodo) 
 
   const button = document.createElement('button') // button 태그 생성
   button.innerText = 'X'
@@ -42,6 +46,8 @@ function paintTodo(newTodo) {
 function deleteTodo(event) {
   const li = event.target.parentElement
   li.remove()  
+  toDos = toDos.filter( (todo) => todo.id !== parseInt(li.id) )
+  saveToDos()
 }
 
 // todo 저장하기
