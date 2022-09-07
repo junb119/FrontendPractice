@@ -1,3 +1,5 @@
+// 명언 추가
+
 const quotes = [{
       quotes: "“Be yourself; everyone else is already taken.”",
       author: "Oscar Wilde"
@@ -58,11 +60,11 @@ const quotes = [{
   const quote = document.querySelector('#quote span:first-child')
   const author = document.querySelector('#quote span:last-child')
 
-  const todaysQuote = quotes[parseInt(Math.random() * quotes.length)]
+  const todaysQuote = quotes[parseInt(Math.random() * quotes.length)] // 랜덤 명언 객체
   
 
-quote.innerText = todaysQuote['quotes']
-author.innerText = todaysQuote['author']
+quote.innerText = todaysQuote['quotes'] // 랜덤 명언 객체 'quotes' 프로퍼티
+author.innerText = todaysQuote['author'] // 랜덤 명언 객체 'author' 프로퍼티
 
-quote.innerText = todaysQuote.quotes
-author.innerText = todaysQuote.author
+// quote.innerText = todaysQuote.quotes
+// author.innerText = todaysQuote.author
